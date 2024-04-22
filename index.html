@@ -1,168 +1,456 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title></title>
-  <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
 
-  body {
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    border: 1px solid white;
-  }
-  </style>
+  <title>Splash</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- lightbox Gallery-->
+  <link rel="stylesheet" href="css/ekko-lightbox.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
 </head>
+
 <body>
-<canvas width="400" height="400" id="game"></canvas>
-<script>
-var canvas = document.getElementById('game');
-var context = canvas.getContext('2d');
 
-var grid = 16;
-var count = 0;
-  
-var snake = {
-  x: 160,
-  y: 160,
-  
-  // snake velocity. moves one grid length every frame in either the x or y direction
-  dx: grid,
-  dy: 0,
-  
-  // keep track of all grids the snake body occupies
-  cells: [],
-  
-  // length of the snake. grows when eating an apple
-  maxCells: 4
-};
-var apple = {
-  x: 320,
-  y: 320
-};
+  <!-- header section strats -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <div class="hero-container">
+            <h2 class="hero glitch layers" data-text="SPLASH"><span>SPLASH</span></h2>
+          </div>
+        </a>
+        <div class="" id="">
 
-// get random whole numbers in a specific range
-// @see https://stackoverflow.com/a/1527820/2124254
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="service.html">Service</a>
+                <a href="blog.html">Blog</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
 
-// game loop
-function loop() {
-  requestAnimationFrame(loop);
+  <!-- slider section -->
+  <section class="slider_section position-relative">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img_container">
+            <div class="img-box">
+              <img src="images/splash1-1resize.jpg" class="" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img_container">
+            <div class="img-box">
+              <img src="images/splah1resize.jpg" class="" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img_container">
+            <div class="img-box">
+              <img src="images/splah1resize.jpg" class="" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel_btn_box">
+        <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="detail-box">
+      <div class="col-md-8 col-lg-6 mx-auto">
+        <div class="inner_detail-box">
+          <h1>
+            Splash <br>
+            Studio
+          </h1>
+          <p>
+            Sahne Senin
+          </p>
+          <div>
+            <a href="" class="slider-link">
+              Detaylar ve rezervasyon için bizimle iletişime geçin!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider section -->
 
-  // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
-    return;
-  }
+  <!-- about section -->
 
-  count = 0;
-  context.clearRect(0,0,canvas.width,canvas.height);
+  <section class="about_section layout_padding ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/splash3.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Hakkımızda
+              </h2>
+            </div>
+            <p>
+              Splash müzik tutkunlarının, sanatçıların ve prodüktörlerin yaratıcılıklarını sergileyebilecekleri profesyonel bir kayıt ve prodüksiyon stüdyosudur. 
+              
+              Burası aynı zamanda sanatçıların birbirleriyle etkileşime geçebileceği, fikir alışverişinde bulunabileceği ve yaratıcı projelerini hayata geçirebileceği bir topluluktur.        </p>
+              
+              Projenizi hayal ettiğinizden daha ileriye taşıyabilirsiniz. İster yeni başlayan bir sanatçı olun, ister deneyimli bir müzik profesyoneli, Splash sizin ve müziğinizin parlaması için burada.
+              <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // move snake by it's velocity
-  snake.x += snake.dx;
-  snake.y += snake.dy;
+  <!-- end about section -->
 
-  // wrap snake position horizontally on edge of screen
-  if (snake.x < 0) {
-    snake.x = canvas.width - grid;
-  }
-  else if (snake.x >= canvas.width) {
-    snake.x = 0;
-  }
-  
-  // wrap snake position vertically on edge of screen
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
-  }
+  <!-- gallery section -->
 
-  // keep track of where snake has been. front of the array is always the head
-  snake.cells.unshift({x: snake.x, y: snake.y});
+  <div class="gallery_section layout_padding2">
+    <div class="container-fluid">
+      <div class="heading_container heading_center">
+        <h2>
+          Galeri
+        </h2>
+      </div>
+      <div class="row">
+        <div class=" col-sm-8 col-md-6 px-0">
+          <div class="img-box">
+            <img src="images/splashg1.jpg" alt="">
+            <a href="images/splashg1.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 px-0">
+          <div class="img-box">
+            <img src="images/splash5-cropg2.jpg" alt="">
+            <a href="images/splash5-cropg2.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 px-0">
+          <div class="img-box">
+            <img src="images/splash4-crop.jpg" alt="">
+            <a href="images/splash4-crop.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 px-0">
+          <div class="img-box">
+            <img src="images/splash1-1crop.jpg" alt="">
+            <a href="images/splash1-1crop.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 px-0">
+          <div class="img-box">
+            <img src="images/splash3-crop.jpg" alt="">
+            <a href="images/splash3-crop.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-8 col-md-6 px-0">
+          <div class="img-box">
+            <img src="images/splash2-crop.jpg" alt="">
+            <a href="images/splash2-crop.jpg" data-toggle="lightbox" data-gallery="gallery">
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          View All
+        </a>
+      </div>
+    </div>
+  </div>
 
-  // remove cells as we move away from them
-  if (snake.cells.length > snake.maxCells) {
-    snake.cells.pop();
-  }
+  <!-- end gallery section -->
 
-  // draw apple
-  context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
-  // draw snake one cell at a time
-  context.fillStyle = 'green';
-  snake.cells.forEach(function(cell, index) {
-    
-    // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+  <!-- service section -->
 
-    // snake ate apple
-    if (cell.x === apple.x && cell.y === apple.y) {
-      snake.maxCells++;
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Kurslar
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="https://img.freepik.com/premium-psd/3d-render-piano-keyboard_805221-6.jpg?w=1060" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Piyano Kursu
+              </h5>
+              <p>
+                Kurs süresince, nota okuma, akor yapma, melodi ve ritim gibi temel müzik becerileri üzerinde durulur. Ayrıca, öğrencilerin özgüvenlerini ve sahne alışkanlıklarını geliştirmek için performans fırsatları da sunulabilir.               </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="https://img.freepik.com/free-vector/orange-electric-guitar-element-blue-background-vector_53876-164151.jpg?t=st=1713776483~exp=1713780083~hmac=64c697594ccc3c907eb6e67faaa19b843b236de628a44464c7e06b021745cd81&w=1060" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Gitar Kursu
+              </h5>
+              <p>
+                Kurslarımız akor yapmayı, temel nota bilgisini, ritim ve strumming tekniklerini kapsar. İleri seviyede kurslar ise solo çalma teknikleri, farklı müzik tarzlarında uzmanlaşma, parmak çalışmaları ve performans tekniklerini içerebilir.              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="https://img.freepik.com/premium-vector/drum-vector-icon-can-be-used-children-toys-iconset_717774-49758.jpg?w=1060" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Bateri Kursu
+              </h5>
+              <p>
+                Ritim duygusunu geliştirmeleri, farklı davul tekniklerini öğrenmeleri ve müzikal ifade yeteneklerini artırmaları amacıyla tasarlanmıştır. Bateri setinin tanıtılması, temel vuruş teknikleri ve basit ritim kalıplarının öğretilmesiyle başlar.</p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, 25) * grid;
-      apple.y = getRandomInt(0, 25) * grid;
-    }
+  </section>
 
-    // check collision with all cells after this one (modified bubble sort)
-    for (var i = index + 1; i < snake.cells.length; i++) {
+  <!-- end service section -->
+
+
+
+  <!-- blog section -->
+
+  <section class="blog_section ">
+    <div class="container-fluid">
+      <div class="heading_container">
+        <h2>
+          Ekibimiz
+        </h2>
+      </div>
+      <div class="profile-cards">
+        <div class="card card-1">
+          <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Kailey Nance">
+          <div class="card-details">
+            <h3 class="card-details-title">Kailey Nance</h3>
+                  <p class="card-details-profession">Grafik Tasarımcı</p>
       
-      // snake occupies same space as a body part. reset game
-      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.cells = [];
-        snake.maxCells = 4;
-        snake.dx = grid;
-        snake.dy = 0;
+          </div>
+        </div>
+      
+        <div class="card card-2">
+          <img src="https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="Vincent Kingston">
+          <div class="card-details">
+            <h3 class="card-details-title">Vincent Kingston</h3>
+                  <p class="card-details-profession">Grafik Tasarımcı</p>
+      
+          </div>
+        </div>
+      
+        <div class="card card-3">
+          <img src="https://images.pexels.com/photos/4814633/pexels-photo-4814633.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Evalyn Stephany">
+          <div class="card-details">
+            <h3 class="card-details-title">Evalyn Stephany</h3>
+                  <p class="card-details-profession">Grafik Tasarımcı</p>
+      
+          </div>
+        </div>
+      </div>
+      
+  </section>
 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
-      }
-    }
-  });
-}
+  <!-- end blog section -->
 
-// listen to keyboard events to move the snake
-document.addEventListener('keydown', function(e) {
-  // prevent snake from backtracking on itself by checking that it's 
-  // not already moving on the same axis (pressing left while moving
-  // left won't do anything, and pressing right while moving left
-  // shouldn't let you collide with your own body)
-  
-  // left arrow key
-  if (e.which === 37 && snake.dx === 0) {
-    snake.dx = -grid;
-    snake.dy = 0;
-  }
-  // up arrow key
-  else if (e.which === 38 && snake.dy === 0) {
-    snake.dy = -grid;
-    snake.dx = 0;
-  }
-  // right arrow key
-  else if (e.which === 39 && snake.dx === 0) {
-    snake.dx = grid;
-    snake.dy = 0;
-  }
-  // down arrow key
-  else if (e.which === 40 && snake.dy === 0) {
-    snake.dy = grid;
-    snake.dx = 0;
-  }
-});
+  <!-- client section -->
 
-// start the game
-requestAnimationFrame(loop);
-</script>
+  <section class="client_section layout_padding">
+  </section>
+  <!-- end client section -->
+
+  <!-- contact section -->
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="row info_main_row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_insta">
+            <h4>
+              <a href="index.html" class="navbar-brand m-0 p-0">
+                <span>
+                  Shapel
+                </span>
+              </a>
+            </h4>
+            <p class="mb-0">
+              Asperiores at, error, delectus aut voluptatem provident cum quam magni necessitatibus molestias eveniet reprehenderit maiores voluptate.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_detail">
+            <h4>
+              Company
+            </h4>
+            <p class="mb-0">
+              when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>
+            Contact Us
+          </h4>
+          <div class="info_contact">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call +01 1234567890
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope"></i>
+              <span>
+                demo@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h4>
+            Follow Us
+          </h4>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- lightbox Gallery-->
+  <script src="js/ekko-lightbox.min.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
 </body>
+
 </html>
