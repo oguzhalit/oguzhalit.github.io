@@ -1526,3 +1526,33 @@ a:focus {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+
+@import url(https://fonts.bunny.net/css?family=amita:700);
+
+
+
+.container-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-gallery {
+  width: 450px;
+  height: 300px;
+  margin: 10px;
+  border: 10px solid #fefae0;
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  transition-duration: 1s;
+}
+
+.img-gallery:hover {
+  border: 5px solid #fff;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-filter: none;
+  filter: none;
+}
