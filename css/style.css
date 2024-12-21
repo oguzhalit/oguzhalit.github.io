@@ -325,11 +325,16 @@ a:focus {
   color: #ffffff;
   padding: 45px;
   border-radius: 5px;
+  position: absolute;
+  width: 100% ;
+  max-width: 90%;
+  padding: 15px;
 }
 
 .slider_section .detail-box h1 {
   font-weight: bold;
   text-transform: uppercase;
+  
 }
 
 .slider_section .detail-box p {
